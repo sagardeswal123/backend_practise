@@ -16,9 +16,7 @@ app.get("/",async(req,res)=>{
 
 
 
-
-
-app.listen(4500,async()=>{
+app.listen(process.enn.PORT || 4500,async()=>{
     await connection
     console.log('listening on port 4600')
 })
