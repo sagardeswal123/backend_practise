@@ -1,6 +1,7 @@
 const express = require('express');
 const { connection } = require('./config/db');
 const { dataModel } = require('./model/data.model');
+require("dotenv").config();
 const cors = require('cors');
 
 const app = express();
@@ -14,7 +15,7 @@ app.get("/",async(req,res)=>{
 })
 
 
-app.listen(4600,async()=>{
+app.listen(process.env.port,async()=>{
     await connection
     console.log('listening on port 4600')
 })

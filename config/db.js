@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 
-const connection = mongoose.connect('mongodb+srv://sagar:sagar@cluster0.sfxoxwy.mongodb.net/backbone?retryWrites=true&w=majority');
+const connection = mongoose.connect(process.env.mongoUrl);
 
 module.exports = {
     connection
