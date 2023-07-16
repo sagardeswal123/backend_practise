@@ -1,8 +1,10 @@
 const express = require('express');
 const { connection } = require('./config/db');
 const { dataModel } = require('./model/data.model');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
