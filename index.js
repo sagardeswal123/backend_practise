@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/",async(req,res)=>{
-    const data = await dataModel.find();
+    const data = await dataModel.find().maxTimeMS(40000);
     res.status(200).send(data)
 })
 
